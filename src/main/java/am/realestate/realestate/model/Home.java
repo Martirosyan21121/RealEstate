@@ -17,6 +17,8 @@ public class Home {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private  String state;
+    private String city;
     private String address;
     private int rooms;
     private int price;
