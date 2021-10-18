@@ -1,4 +1,4 @@
-package am.realestate.realestate.endpoint;
+package am.realestate.realestate.controller;
 
 import am.realestate.realestate.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class UserEndpoint {
+public class UserController {
 
     @Autowired
     private UserService userService;
