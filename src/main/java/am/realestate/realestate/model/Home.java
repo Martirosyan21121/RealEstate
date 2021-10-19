@@ -23,6 +23,8 @@ public class Home {
     private int rooms;
     private int price;
     private String description;
+    @JoinColumn(name = "home_type")
+    private HomeType homeType;
     @JoinColumn(name = "pic_url")
     private String picUrl;
     @ManyToOne
