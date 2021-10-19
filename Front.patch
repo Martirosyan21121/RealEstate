@@ -1,0 +1,237 @@
+Index: src/main/java/am/realestate/realestate/controller/CommentController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/controller/CommentController.java b/src/main/java/am/realestate/realestate/controller/CommentController.java
+new file mode 100644
+--- /dev/null	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
++++ b/src/main/java/am/realestate/realestate/controller/CommentController.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -0,0 +1,11 @@
++package am.realestate.realestate.controller;
++
++import lombok.RequiredArgsConstructor;
++import org.springframework.stereotype.Controller;
++
++@Controller
++@RequiredArgsConstructor
++public class CommentController {
++
++
++}
+Index: src/main/java/am/realestate/realestate/controller/HomeController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/controller/HomeController.java b/src/main/java/am/realestate/realestate/controller/HomeController.java
+new file mode 100644
+--- /dev/null	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
++++ b/src/main/java/am/realestate/realestate/controller/HomeController.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -0,0 +1,10 @@
++package am.realestate.realestate.controller;
++
++import lombok.RequiredArgsConstructor;
++import org.springframework.stereotype.Controller;
++
++@Controller
++@RequiredArgsConstructor
++public class HomeController {
++
++}
+Index: src/main/java/am/realestate/realestate/controller/IndexController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/controller/IndexController.java b/src/main/java/am/realestate/realestate/controller/IndexController.java
+new file mode 100644
+--- /dev/null	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
++++ b/src/main/java/am/realestate/realestate/controller/IndexController.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -0,0 +1,30 @@
++package am.realestate.realestate.controller;
++
++import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.GetMapping;
++
++@Controller
++public class IndexController {
++
++    @GetMapping("/index")
++    public String index(){
++        return "index";
++    }
++
++    @GetMapping("/buy")
++    public String buy(){
++        return "buy";
++    }
++    @GetMapping("/contact")
++    public String contact(){
++        return "contact";
++    }
++    @GetMapping("/properties")
++    public String properties(){
++        return "properties";
++    }
++    @GetMapping("/rent")
++    public String rent(){
++        return "rent";
++    }
++}
+Index: src/main/java/am/realestate/realestate/controller/MessageController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/controller/MessageController.java b/src/main/java/am/realestate/realestate/controller/MessageController.java
+new file mode 100644
+--- /dev/null	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
++++ b/src/main/java/am/realestate/realestate/controller/MessageController.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -0,0 +1,12 @@
++package am.realestate.realestate.controller;
++
++import lombok.RequiredArgsConstructor;
++import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.RestController;
++
++@Controller
++@RequiredArgsConstructor
++public class MessageController {
++
++
++}
+Index: src/main/java/am/realestate/realestate/endpoint/UserEndpoint.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/endpoint/UserEndpoint.java b/src/main/java/am/realestate/realestate/controller/UserController.java
+rename from src/main/java/am/realestate/realestate/endpoint/UserEndpoint.java
+rename to src/main/java/am/realestate/realestate/controller/UserController.java
+--- a/src/main/java/am/realestate/realestate/endpoint/UserEndpoint.java	(revision 0fc707c1adabed89882656f33609334d9dace61b)
++++ b/src/main/java/am/realestate/realestate/controller/UserController.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -1,14 +1,18 @@
+-package am.realestate.realestate.endpoint;
++package am.realestate.realestate.controller;
+ 
+ import am.realestate.realestate.services.UserService;
+ import lombok.RequiredArgsConstructor;
+ import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.web.bind.annotation.RestController;
++import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.GetMapping;
+ 
+-@RestController
++@Controller
+ @RequiredArgsConstructor
+-public class UserEndpoint {
++public class UserController {
+ 
+     @Autowired
+     private UserService userService;
++
++
++
+ }
+Index: src/main/java/am/realestate/realestate/endpoint/CommentEndpoint.java
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/endpoint/CommentEndpoint.java b/src/main/java/am/realestate/realestate/endpoint/CommentEndpoint.java
+deleted file mode 100644
+--- a/src/main/java/am/realestate/realestate/endpoint/CommentEndpoint.java	(revision 0fc707c1adabed89882656f33609334d9dace61b)
++++ /dev/null	(revision 0fc707c1adabed89882656f33609334d9dace61b)
+@@ -1,11 +0,0 @@
+-package am.realestate.realestate.endpoint;
+-
+-import lombok.RequiredArgsConstructor;
+-import org.springframework.web.bind.annotation.RestController;
+-
+-@RestController
+-@RequiredArgsConstructor
+-public class CommentEndpoint {
+-
+-
+-}
+Index: src/main/java/am/realestate/realestate/endpoint/HomeEndpoint.java
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/endpoint/HomeEndpoint.java b/src/main/java/am/realestate/realestate/endpoint/HomeEndpoint.java
+deleted file mode 100644
+--- a/src/main/java/am/realestate/realestate/endpoint/HomeEndpoint.java	(revision 0fc707c1adabed89882656f33609334d9dace61b)
++++ /dev/null	(revision 0fc707c1adabed89882656f33609334d9dace61b)
+@@ -1,11 +0,0 @@
+-package am.realestate.realestate.endpoint;
+-
+-import lombok.RequiredArgsConstructor;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.RestController;
+-
+-@RestController
+-@RequiredArgsConstructor
+-public class HomeEndpoint {
+-
+-}
+Index: src/main/java/am/realestate/realestate/endpoint/MessageEndpoint.java
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/endpoint/MessageEndpoint.java b/src/main/java/am/realestate/realestate/endpoint/MessageEndpoint.java
+deleted file mode 100644
+--- a/src/main/java/am/realestate/realestate/endpoint/MessageEndpoint.java	(revision 0fc707c1adabed89882656f33609334d9dace61b)
++++ /dev/null	(revision 0fc707c1adabed89882656f33609334d9dace61b)
+@@ -1,11 +0,0 @@
+-package am.realestate.realestate.endpoint;
+-
+-import lombok.RequiredArgsConstructor;
+-import org.springframework.web.bind.annotation.RestController;
+-
+-@RestController
+-@RequiredArgsConstructor
+-public class MessageEndpoint {
+-
+-
+-}
+Index: src/main/java/am/realestate/realestate/model/Home.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/model/Home.java b/src/main/java/am/realestate/realestate/model/Home.java
+--- a/src/main/java/am/realestate/realestate/model/Home.java	(revision 0fc707c1adabed89882656f33609334d9dace61b)
++++ b/src/main/java/am/realestate/realestate/model/Home.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -23,6 +23,8 @@
+     private int rooms;
+     private int price;
+     private String description;
++    @JoinColumn(name = "home_type")
++    private HomeType homeType;
+     @JoinColumn(name = "pic_url")
+     private String picUrl;
+     @ManyToOne
+Index: src/main/java/am/realestate/realestate/model/HomeType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/am/realestate/realestate/model/HomeType.java b/src/main/java/am/realestate/realestate/model/HomeType.java
+new file mode 100644
+--- /dev/null	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
++++ b/src/main/java/am/realestate/realestate/model/HomeType.java	(revision 43f0ac6905942cd64c7c5a6722f840626a0dba55)
+@@ -0,0 +1,6 @@
++package am.realestate.realestate.model;
++
++public enum HomeType {
++
++    BAY, RENT, SALE
++}
+diff --git a/mvnw b/mvnw
+deleted file mode 100644
+index 4c1c42714d3358a04dd65b3a82e4cfa463d7f073..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/mvnw.cmd b/mvnw.cmd
+deleted file mode 100644
+index 66db70c155042263431a5ce07021694de5bcbdb4..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
