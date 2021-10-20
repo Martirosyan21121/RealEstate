@@ -11,20 +11,46 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/buy")
-    public String buy(){
-        return "buy";
+    @GetMapping("/about")
+    public String about(){
+        return "about";
     }
+
+
+    @GetMapping("/agents")
+    public String agents(){
+        return "agents";
+    }
+
+    @GetMapping("/blog")
+    public String blog(){
+        return "blog";
+    }
+
+
+    @GetMapping("/blogdetail")
+    public String blogdetail(){
+        return "blogdetail";
+    }
+
+    @GetMapping("/buysalerent")
+    public String buysalerent(){
+        return "buysalerent";
+    }
+
     @GetMapping("/contact")
     public String contact(){
         return "contact";
     }
-    @GetMapping("/properties")
-    public String properties(){
-        return "properties";
+
+
+    @GetMapping("/property-detail")
+    public String propertydetail(){
+        return "property-detail";
     }
-    @GetMapping("/rent")
-    public String rent(){
-        return "rent";
+
+    @GetMapping("/register")
+    public String register(){
+        return "register";
     }
 }
