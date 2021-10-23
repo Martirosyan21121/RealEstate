@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Realestate Bootstrap Theme </title>
 <meta charset="UTF-8" />
@@ -52,23 +52,20 @@
             </div>
 
 
-            <!-- Nav Starts -->
-            <div class="navbar-collapse  collapse">
+            <div class="navbar-collapse  collapse ">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../agents.html">Agents</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+               <li class="active"><a href="/index" th:text="#{index.home}">Home</a></li>
+                <li><a href="/about" th:text="#{index.About}">About</a></li>
+                <li><a href="/agents"th:text="#{index.Agents}">Agents</a></li>
+                <li><a href="/blog"th:text="#{index.Blog}">Blog</a></li>
+                <li><a href="/contact"th:text="#{index.Contact}">Contact</a></li>
               </ul>
             </div>
-            <!-- #Nav Ends -->
 
           </div>
         </div>
 
     </div>
-<!-- #Header Starts -->
 
 
 
@@ -76,17 +73,23 @@
 
 <div class="container">
 
-<!-- Header Starts -->
 <div class="header">
-<a href="../index.html"><img src="images/logo.png" alt="Realestate"></a>
+<a href="/index"><img src="images/logo.png" alt="Realestate"></a>
 
               <ul class="pull-right">
-                <li><a href="../buysalerent.html">Buy</a></li>
-                <li><a href="../buysalerent.html">Sale</a></li>
-                <li><a href="../buysalerent.html">Rent</a></li>
+                <li><a href="/buysalerent" th:text="#{index.Buy}">Buy</a></li>
+                <li><a href="/buysalerent" th:text="#{index.Sale}">Sale</a></li>
+                <li><a href="/buysalerent" th:text="#{index.Rent}">Rent</a></li>
               </ul>
 </div>
-<!-- #Header Starts -->
+    <div class="header">
+        <ul class="pull-right">
+   <li> <a href="?lang=en"><img src="images/flags/1200px-Flag_of_the_United_States.svg.png" alt="ENG"
+                            style="width: 45px; height: 25px; margin-top: -250%"></a></li>
+   <li> <a href="?lang=ru"><img src="images/flags/Flag-Russia.jpg" alt="RU" style="width: 45px; height: 25px; margin-top: -250%"></a></li>
+            <li> <a href="?lang=hy"><img src="images/flags/flag-of-armenia.jpg" alt="ARM" style="width: 45px; height: 25px; margin-top: -250%"></a></li>
+        </ul>
+</div>
 </div>
 </div>
 </body>

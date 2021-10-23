@@ -24,9 +24,8 @@ public class User {
     private String email;
     @JoinColumn(name = "phone_number")
     private int phoneNumber;
-    @JoinColumn(name = "pic_url")
-    private String picUrl;
     private String password;
+    @Enumerated(value = EnumType.STRING)
     @JoinColumn(name = "user_type")
     private UserType userType;
 }

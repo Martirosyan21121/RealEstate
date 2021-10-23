@@ -9,13 +9,12 @@
 <div th:include="/fragments/header:: header"></div>
 <div class="inside-banner">
   <div class="container"> 
-    <span class="pull-right"><a href="#">Home</a> / Register</span>
+    <span class="pull-right"><a href="/index">Home</a> / Register</span>
     <h2>Register</h2>
 </div>
 </div>
-<!-- banner -->
 
-
+<form action="/addUser" method="post">
 <div class="container">
 <div class="spacer">
 <div class="row register">
@@ -23,11 +22,11 @@
 
 
                 <input type="text" class="form-control" placeholder="Full Name" name="form_name">
+                <input type="text" class="form-control" placeholder="Surname" name="form_surname">
                 <input type="text" class="form-control" placeholder="Enter Email" name="form_email">
+                <input type="text" class="form-control" placeholder="Phone number" name="form_Phone number">
                 <input type="password" class="form-control" placeholder="Password" name="form_phone">
-                <input type="password" class="form-control" placeholder="Confirm Password" name="form_phone">
-
-                <textarea rows="6" class="form-control" placeholder="Address" name="form_message"></textarea>
+<!--                <input type="password" class="form-control" placeholder="Please input password once again" name="form_phone">-->
       <button type="submit" class="btn btn-success" name="Submit">Register</button>
           
 
@@ -38,6 +37,7 @@
 </div>
 </div>
 </div>
+</form>
 <div th:include="/fragments/footer::footer"></div>
 </body>
 </html>
