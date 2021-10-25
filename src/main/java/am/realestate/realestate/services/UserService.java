@@ -26,27 +26,22 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public User save(User user) {
-        Optional<User> byEmail = userRepository.findByEmail(user.getEmail());
-        if (byEmail.isPresent()) {
-            log.info("User by email " + user.getEmail() + "Dont save please repeating");
-            return null;
-        }
-        return userRepository.save(user);
+    public void save(User user) {
+       userRepository.save(user);
     }
 
-    public User updateUser(User user) {
-        Optional<User> byId = userRepository.findById(user.getId());
-        if (byId.isEmpty()) {
-            log.info("Don't update: wrong ID");
-            return null;
-        }
-        if (user.getUserType() != UserType.USER && user.getUserType() != UserType.ADMIN) {
-            log.info("wrong Role of update's User");
-            user.setUserType(byId.get().getUserType());
-        }
-        return userRepository.save(user);
-    }
+//    public User updateUser(User user) {
+//        Optional<User> byId = userRepository.findById(user.getId());
+//        if (byId.isEmpty()) {
+//            log.info("Don't update: wrong ID");
+//            return null;
+//        }
+//        if (user.getUserType() != UserType.USER && user.getUserType() != UserType.ADMIN) {
+//            log.info("wrong Role of update's User");
+//            user.setUserType(byId.get().getUserType());
+//        }
+//        return userRepository.save(user);
+//    }
 
     public boolean deleteById(int id) {
         Optional<User> byId = userRepository.findById(id);

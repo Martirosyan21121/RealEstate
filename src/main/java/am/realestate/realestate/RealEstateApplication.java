@@ -44,4 +44,5 @@ public class RealEstateApplication implements CommandLineRunner {
     public PasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

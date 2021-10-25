@@ -1,6 +1,7 @@
 package am.realestate.realestate.controller;
 
 import am.realestate.realestate.model.User;
+import am.realestate.realestate.model.UserType;
 import am.realestate.realestate.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class UserController {
 
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute User user){
+        user.setUserType(UserType.USER);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.save(user);
         return "redirect:/user";
