@@ -26,21 +26,26 @@ public class Security extends WebSecurityConfigurerAdapter {
                 .antMatchers("blog").permitAll()
                 .antMatchers("blogdetail").permitAll()
                 .antMatchers("buysalerent").permitAll()
+                .antMatchers("addHome").permitAll()
                 .antMatchers("contact").permitAll()
                 .antMatchers("contact").permitAll()
+                .antMatchers("/addUser").permitAll()
                 .antMatchers("property-detail").permitAll()
-                .antMatchers("register").permitAll()
-                .antMatchers("/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/userAdmin8888")
+                .hasAnyAuthority("ADMIN")
+                .antMatchers(HttpMethod.GET, "/addHome")
+                .hasAnyAuthority("USER")
                 .and()
                 .csrf()
                 .disable()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
                 .logoutSuccessUrl("/index")
                 .deleteCookies("JSESSIONID")
                 .invalidateHttpSession(true)
                 .and()
-                .formLogin();
+                .formLogin().loginPage("/footer").permitAll()
+                .defaultSuccessUrl("/index");
     }
 
 

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Massage</title>
+    <div th:include="/fragments/header::stile"></div>
+
 </head>
 <body>
 <div th:fragment="footer">
@@ -56,6 +58,7 @@
 
         </div>
     </div>
+</div>
 
 
     <!-- Modal -->
@@ -64,17 +67,19 @@
             <div class="modal-content">
                 <div class="row">
                     <div class="col-sm-6 login">
+
                         <h4 th:text="#{index.Login}">Login</h4>
-                        <form class="" role="form">
+
+                        <form class="" role="form" action="/login" method="post">
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail2"
-                                       placeholder="Enter email">
+                                <label class="sr-only" for="email">Email address</label>
+                                <input type="email" class="form-control" id="email"
+                                       placeholder="Enter email" name="email">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword2"
-                                       placeholder="Password">
+                                <label class="sr-only" for="password">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                       placeholder="Password" name="password">
                             </div>
                             <div class="checkbox">
                                 <label>
@@ -95,8 +100,7 @@
             </div>
         </div>
     </div>
-    <!-- /.modal -->
-</div>
+
 </body>
 </html>
 

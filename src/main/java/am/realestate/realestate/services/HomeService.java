@@ -1,6 +1,7 @@
 package am.realestate.realestate.services;
 
 import am.realestate.realestate.model.Home;
+import am.realestate.realestate.model.HomeType;
 import am.realestate.realestate.repasitpres.HomeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,13 +26,19 @@ public class HomeService {
     public Optional<Home> findById(int id){
         return homeRepository.findById(id);
     }
-    public Home save(Home home){
-        Optional<Home> home1 = homeRepository.findByAddress(home.getAddress().toUpperCase(Locale.ROOT));
-        if (home1.isPresent()){
-            return home1.get();
-        }
-        home.setAddress(home.getAddress().toUpperCase(Locale.ROOT));
-        return homeRepository.save(home);
+
+//    public Home save(Home home){
+//        Optional<Home> home1 = homeRepository.findByAddress(home.getAddress().toUpperCase(Locale.ROOT));
+//        if (home1.isPresent()){
+//            return home1.get();
+//        }
+//        home.setAddress(home.getAddress().toUpperCase(Locale.ROOT));
+//
+//        return homeRepository.save(home);
+//    }
+
+    public void save(Home home){
+        homeRepository.save(home);
     }
     public boolean deleteById(int id){
         Optional<Home> deleteById = homeRepository.findById(id);

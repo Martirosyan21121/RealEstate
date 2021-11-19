@@ -1,4 +1,4 @@
-package am.realestate.realestate.dut;
+package am.realestate.realestate.dot;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +14,5 @@ public class Dto {
 
     @Autowired
     private String passwordConfig;
+
 }

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Massage</title>
+  <title>Index</title>
 
   <div th:include="/fragments/header::stile"></div>
 </head>
@@ -12,60 +12,60 @@
             <div id="slider" class="sl-slider-wrapper">
 
         <div class="sl-slider">
-        
+
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-1"></div>
               <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
+              <blockquote>
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
               <cite>$ 20,000,000</cite>
               </blockquote>
             </div>
           </div>
-          
+
           <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-2"></div>
               <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
+              <blockquote>
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
               <cite>$ 20,000,000</cite>
               </blockquote>
             </div>
           </div>
-          
+
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-3"></div>
               <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
+              <blockquote>
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
               <cite>$ 20,000,000</cite>
               </blockquote>
             </div>
           </div>
-          
+
           <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-4"></div>
               <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
+              <blockquote>
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
               <cite>$ 20,000,000</cite>
               </blockquote>
             </div>
           </div>
-          
+
           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
             <div class="sl-slide-inner">
               <div class="bg-img bg-img-5"></div>
               <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
+              <blockquote>
               <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
               <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
               <cite>$ 20,000,000</cite>
@@ -90,7 +90,7 @@
 
 
 <div class="banner-search">
-  <div class="container"> 
+  <div class="container">
     <!-- banner -->
     <h3>Buy, Sale & Rent</h3>
     <div class="searchbar">
@@ -126,12 +126,12 @@
               <button class="btn btn-success"  onclick="window.location.href='/buysalerent'">Find Now</button>
               </div>
           </div>
-          
-          
+
+
         </div>
         <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
           <p>Join now and get updated with all the properties deals.</p>
-          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div>
+          <button class="btn btn-info"   data-toggle="modal " data-target="#loginpop" th:text="#{index.Login}">Login</button>        </div>
       </div>
     </div>
   </div>
@@ -228,7 +228,7 @@
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
         <a class="btn btn-primary" href="/property-detail">View Details</a>
       </div>
-      
+
     </div>
   </div>
   <div class="spacer">
@@ -236,7 +236,7 @@
       <div class="col-lg-6 col-sm-9 recent-view">
         <h3>About Us</h3>
         <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.html">Learn More</a></p>
-      
+
       </div>
       <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
         <h3>Recommended Properties</h3>
@@ -291,7 +291,6 @@
     </div>
   </div>
 </div>
-
 <div th:include="/fragments/footer::footer"></div>
 </body>
 </html>

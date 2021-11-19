@@ -14,6 +14,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class SecurityService implements UserDetailsService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -21,8 +22,9 @@ public class SecurityService implements UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         Optional<User> byEmail = userRepository.findByEmail(s);
         if (!byEmail.isPresent()) {
-            throw new UsernameNotFoundException("User: " + s + "Emile dose not exist!!!");
+            throw new UsernameNotFoundException("User with" + s + "emile dose note exist!!!!");
         }
         return new SecurityUser(byEmail.get());
     }
+
 }

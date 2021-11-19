@@ -5,8 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -28,4 +30,6 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     @JoinColumn(name = "user_type")
     private UserType userType;
+
+
 }

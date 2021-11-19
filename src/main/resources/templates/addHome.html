@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Home</title>
+    <div th:include="/fragments/header::stile"></div>
+
+</head>
+<body>
+<div th:include="/fragments/header:: header"></div>
+
+
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="/index">Home</a> / Add Home</span>
+        <h2>Add Home</h2>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="spacer">
+        <div class="row register">
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+
+                <form action="/addHome" method="post">
+
+                    <input type="text" class="form-control" placeholder="State" name="state">
+                    <input type="text" class="form-control" placeholder="City" name="city">
+                    <input type="text" class="form-control" placeholder="Address" name="address">
+                    <input type="number" class="form-control" placeholder="Rooms" name="rooms">
+                    <input type="number" class="form-control" placeholder="Price" name="price">
+
+                    <select class="form-control" name="homeType">
+                        <option value="BUY">BUY</option>
+                        <option value="RENT">RENT</option>
+                        <option value="SALE">SALE</option>
+                    </select>
+
+                    <textarea class="form-control" placeholder="Description" name="description"></textarea>
+                    <input type="file" class="form-control" placeholder="Picture" name="picUrl">
+<!--                        <input  type="text" class="form-control" placeholder="Your name" name="user">-->
+
+                    <button type="submit" class="btn btn-success" name="Submit" value="add">Add Home</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:include="/fragments/footer::footer"></div>
+
+</body>
+</html>

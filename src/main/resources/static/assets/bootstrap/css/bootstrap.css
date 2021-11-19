@@ -1740,7 +1740,7 @@ table th[class*="col-"] {
 .table > thead > .active > th,
 .table > tbody > .active > th,
 .table > tfoot > .active > th {
-  background-color: #f5f5f5;
+  background-color:#e8e8e8;
 }
 
 .table-hover > tbody > tr > .active:hover,
