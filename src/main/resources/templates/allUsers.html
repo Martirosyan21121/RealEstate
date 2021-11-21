@@ -8,6 +8,7 @@
 <body>
 <div th:include="/fragments/header:: header"></div>
 
+
 <div class="active">
     <table class="table table-bordered table-hover">
         <tr>
@@ -16,6 +17,7 @@
             <th>Surname</th>
             <th>Email</th>
             <th>Phone Number</th>
+
         </tr>
         <tr th:each="user : ${users}">
             <td th:text="${user.id}"></td>
@@ -23,6 +25,7 @@
             <td th:text="${user.surname}"></td>
             <td th:text="${user.email}"></td>
             <td th:text="${user.phoneNumber}"></td>
+
         </tr>
     </table>
 </div>

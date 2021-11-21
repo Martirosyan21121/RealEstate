@@ -35,17 +35,18 @@ public class Security extends WebSecurityConfigurerAdapter {
                 .hasAnyAuthority("ADMIN")
                 .antMatchers(HttpMethod.GET, "/addHome")
                 .hasAnyAuthority("USER")
+                .antMatchers(HttpMethod.POST, "/login")
+                .hasAnyAuthority("USER")
                 .and()
                 .csrf()
                 .disable()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
-                .logoutSuccessUrl("/index")
                 .deleteCookies("JSESSIONID")
                 .invalidateHttpSession(true)
                 .and()
-                .formLogin().loginPage("/footer").permitAll()
-                .defaultSuccessUrl("/index");
+                .formLogin();
+
+
     }
 
 

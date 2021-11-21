@@ -24,6 +24,7 @@ public class Home {
     private int price;
     private String description;
     @JoinColumn(name = "home_type")
+    @Enumerated(value = EnumType.STRING)
     private HomeType homeType;
     @JoinColumn(name = "pic_url")
     private String picUrl;

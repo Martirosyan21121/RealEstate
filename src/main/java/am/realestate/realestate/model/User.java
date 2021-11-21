@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -30,6 +31,7 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     @JoinColumn(name = "user_type")
     private UserType userType;
+
 
 
 }

@@ -3,6 +3,7 @@ package am.realestate.realestate.controller;
 import am.realestate.realestate.dot.Dto;
 import am.realestate.realestate.model.User;
 import am.realestate.realestate.model.UserType;
+import am.realestate.realestate.services.MailService;
 import am.realestate.realestate.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -28,6 +28,10 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
+    @Autowired
+    private MailService mailService;
+
     @GetMapping("/userAdmin8888")
     public String user(ModelMap modelMap) {
         List<User> user = userService.findAll();
@@ -36,22 +40,25 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String getlogin(@RequestParam(value = "error", required = false) String error,
-                           ModelMap modelMap) {
-        modelMap.addAttribute("error", error != null);
-        return "index";
+    public String getlogin() {
+
+        return "login";
     }
 
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute User user, Dto dto) {
+
+        user.setUserType(UserType.USER);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userService.save(user);
+        mailService.send(user.getEmail(), "Welcome", "Dear" + user.getName() + "You have successfully registered !!!");
         if (user.getPassword().equals(dto.getPasswordConfig())) {
-            user.setUserType(UserType.USER);
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            userService.save(user);
+            return "index";
+
         } else {
             return "/register";
         }
-        return "index";
+
     }
 }
 

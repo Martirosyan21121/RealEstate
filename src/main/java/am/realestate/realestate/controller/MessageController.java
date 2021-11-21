@@ -15,16 +15,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MessageController {
 
-@Autowired
+    @Autowired
     private UserService userService;
-@Autowired
+    @Autowired
     private MessageService messageService;
 
-@GetMapping("/sendMessage")
-    private String getAllUsers(ModelMap modelMap){
-    List<User> users = userService.findAll();
-    modelMap.addAttribute("users", users);
-    return "property-detail";
-}
+    @GetMapping("/sendMessageForAdmin")
+    private String getAllUsers(ModelMap modelMap) {
+        List<User> message = userService.findAll();
+        modelMap.addAttribute("message", message);
+        return "allUsers";
+    }
 
 }

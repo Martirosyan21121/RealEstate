@@ -27,19 +27,20 @@ public class HomeService {
         return homeRepository.findById(id);
     }
 
-//    public Home save(Home home){
-//        Optional<Home> home1 = homeRepository.findByAddress(home.getAddress().toUpperCase(Locale.ROOT));
-//        if (home1.isPresent()){
-//            return home1.get();
-//        }
-//        home.setAddress(home.getAddress().toUpperCase(Locale.ROOT));
-//
-//        return homeRepository.save(home);
+    public Home save(Home home){
+        Optional<Home> home1 = homeRepository.findByAddress(home.getAddress().toUpperCase(Locale.ROOT));
+        if (home1.isPresent()){
+            return home1.get();
+        }
+        home.setAddress(home.getAddress().toUpperCase(Locale.ROOT));
+
+        return homeRepository.save(home);
+    }
+
+//    public void save(Home home){
+//        homeRepository.save(home);
 //    }
 
-    public void save(Home home){
-        homeRepository.save(home);
-    }
     public boolean deleteById(int id){
         Optional<Home> deleteById = homeRepository.findById(id);
         if (deleteById.isEmpty()){

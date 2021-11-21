@@ -17,14 +17,9 @@ public class IndexController {
     }
 
 
-    @GetMapping("/agents")
-    public String agents(){
-        return "agents";
-    }
-
-    @GetMapping("/blog")
-    public String blog(){
-        return "blog";
+    @GetMapping("/homes")
+    public String homes(){
+        return "homes";
     }
 
 
@@ -33,16 +28,16 @@ public class IndexController {
         return "blogdetail";
     }
 
-    @GetMapping("/buysalerent")
-    public String buysalerent(){
-        return "buysalerent";
-    }
+
 
     @GetMapping("/contact")
     public String contact(){
         return "contact";
     }
-
+    @GetMapping("/blog")
+    public String blog(){
+        return "blog";
+    }
 
     @GetMapping("/property-detail")
     public String propertydetail(){
@@ -53,4 +48,6 @@ public class IndexController {
     public String register(){
         return "register";
     }
-}
+
+    }
+

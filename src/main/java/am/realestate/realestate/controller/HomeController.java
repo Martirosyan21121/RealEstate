@@ -14,10 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.awt.print.Book;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -45,12 +47,18 @@ public class HomeController {
     }
 
     @PostMapping("/addHome")
-    public String addHome(@ModelAttribute Home home, User user) {
-        home.setUser(User.builder()
-                .id(user.getId())
-                .build());
-        home.setUser(home.getUser());
+    public String addHome(@ModelAttribute Home home) {
         homeService.save(home);
         return "redirect:/home";
+    }
+
+    @GetMapping("homes/id")
+    public String singleHome(@PathVariable("id") int id, ModelMap modelMap){
+        Optional<Home> home = homeService.findById(id);
+        if (!home.isPresent()){
+            return "index";
+        }
+        modelMap.addAttribute("homes", home.get());
+        return "homes";
     }
 }

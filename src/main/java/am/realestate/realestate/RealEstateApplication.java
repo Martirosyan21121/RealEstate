@@ -2,7 +2,6 @@ package am.realestate.realestate;
 
 import am.realestate.realestate.model.User;
 import am.realestate.realestate.model.UserType;
-import am.realestate.realestate.repasitpres.HomeRepository;
 import am.realestate.realestate.repasitpres.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,11 +12,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
+
 public class RealEstateApplication implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;
-
+;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -39,6 +39,7 @@ public class RealEstateApplication implements CommandLineRunner {
                     .build());
         }
     }
+
 
     @Bean
     public PasswordEncoder encoder() {

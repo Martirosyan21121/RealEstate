@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Massage</title>
+    <title>Footer</title>
     <div th:include="/fragments/header::stile"></div>
 
 </head>
@@ -19,7 +19,7 @@
                     <ul class="row">
                         <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/about" th:text="#{index.About}">About</a>
                         </li>
-                        <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/agents" th:text="#{index.Agents}">Agents</a>
+                        <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/homes" th:text="#{index.Homes}">Homes</a>
                         </li>
                         <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/blog" th:text="#{index.Blog}">Blog</a></li>
                         <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/contact"
@@ -60,7 +60,7 @@
     </div>
 </div>
 
-
+<div th:fragment="modal">
     <!-- Modal -->
     <div id="loginpop" class="modal fade">
         <div class="modal-dialog">
@@ -70,29 +70,35 @@
 
                         <h4 th:text="#{index.Login}">Login</h4>
 
-                        <form class="" role="form" action="/login" method="post">
+                        <form class="" action="/login" method="post">
+
+
+                            <div class="alert alert-danger" role="alert">Bad email or bassword</div>
+
                             <div class="form-group">
                                 <label class="sr-only" for="email">Email address</label>
                                 <input type="email" class="form-control" id="email"
-                                       placeholder="Enter email" name="email">
+                                       placeholder="Enter email" name="email" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="password">Password</label>
                                 <input type="password" class="form-control" id="password"
-                                       placeholder="Password" name="password">
+                                       placeholder="Password" name="password" required>
                             </div>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"> Remember me
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-success"th:text="#{index.Sign.in}">Sign in</button>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block" th:text="#{index.Sign.in}">Sign in</button>
                         </form>
                     </div>
                     <div class="col-sm-6">
                         <h4 th:text="#{index.New.User.Sign.Up}">New User Sign Up</h4>
-                        <p th:text="#{index.Join.today.and.get.updated.with.all.the.properties.deal.happening.around}">Join today and get updated with all the properties deal happening around.</p>
-                        <button type="submit" class="btn btn-info" onclick="window.location.href='/register'"th:text="#{index.Join.Now}">Join Now
+                        <p th:text="#{index.Join.today.and.get.updated.with.all.the.properties.deal.happening.around}">
+                            Join today and get updated with all the properties deal happening around.</p>
+                        <button type="submit" class="btn btn-info" onclick="window.location.href='/register'"
+                                th:text="#{index.Join.Now}">Join Now
                         </button>
                     </div>
 
@@ -100,7 +106,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </body>
 </html>
 

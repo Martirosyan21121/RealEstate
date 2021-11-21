@@ -6,10 +6,14 @@ import am.realestate.realestate.repasitpres.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -17,6 +21,9 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+
+
+
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -27,7 +34,7 @@ public class UserService {
     }
 
     public void save(User user) {
-       userRepository.save(user);
+        userRepository.save(user);
     }
 
 //    public User updateUser(User user) {
@@ -60,4 +67,7 @@ public class UserService {
         }
         return byEmail.get();
     }
-}
+
+
+
+    }
